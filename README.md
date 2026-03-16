@@ -139,9 +139,32 @@ Exposes the application externally using **LoadBalancer**.
 
 ---
 
+# ☸ Docker&DockerHub Deployment
+
+The application is deployed using Kubernetes manifests.
+
+<details>
+
+<summary>Dockerfile and Repository</summary>
+
+### Dockerfile
+
+Responsible for converting the application into a container.
+
+![pipeline](docs/dock.png)
+### DockerHub
+
+Apload the Container externally repositor like **DockerHub**.
+
+![pipeline](docs/hub.png)
+
+</details>
+
+---
+
 # 🖼 Deployment Screenshots
 
-You can add screenshots like this.
+Attached some screen shots of this task.
 
 ### JenkinsFile Stage Execution
 
@@ -205,17 +228,6 @@ This will provision:
 * VPC And SUBNETS
 * And Other Networking Components
 
----
-
-### 5️⃣ Push Source To Github
-
-```bash
-cd ../src
-
-git add .
-git commit -m "something"
-git push origin main
-```
 </details>
 
 ---
@@ -333,75 +345,3 @@ This project demonstrates hands-on experience with **CI/CD pipelines, containeri
 
 ⭐ If you found this project useful, feel free to star the repository.
 ---
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-aws eks --region us-east-1 update-kubeconfig --name my-eks-test
-
-
-
-
-kubectl rollout restart deployment my-deployment
-
-
-nohup kubectl port-forward svc/prometheus-server -n monitoring 9090:80 > prometheus.log 2>&1 &
-
-nohup kubectl port-forward svc/grafana -n monitoring 3000:80 > grafana.log 2>&1 &
-
-
-kubectl get secret grafana -n monitoring -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
-
-kubectl get secret grafana -n monitoring -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
-
-
-kubectl port-forward svc/prometheus-server 9096:80 -n monitoring
-
-kubectl port-forward svc/grafana 3006:80 -n monitoring
-
-http://prometheus-server.monitoring.svc.cluster.local
