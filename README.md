@@ -205,6 +205,17 @@ This will provision:
 * VPC And SUBNETS
 * And Other Networking Components
 
+---
+
+### 5️⃣ Push Source To Github
+
+```bash
+cd ../src
+
+git add .
+git commit -m "something"
+git push origin main
+```
 </details>
 
 ---
